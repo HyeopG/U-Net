@@ -201,13 +201,13 @@ else:
             for j in range(label.shape[0]):
                 id = batch_size * (batch - 1) + j
 
-                plt.imsave(os.path.join(result_dir, 'png', 'label_%04d.png' % id), label[j].squeeze(), cmap='gray')
-                plt.imsave(os.path.join(result_dir, 'png', 'input_%04d.png' % id), input[j].squeeze(), cmap='gray')
-                plt.imsave(os.path.join(result_dir, 'png', 'output_%04d.png' % id), output[j].squeeze(), cmap='gray')
+                plt.imsave(os.path.join(result_dir_test, 'png', 'label_%04d.png' % id), label[j].squeeze(), cmap='gray')
+                plt.imsave(os.path.join(result_dir_test, 'png', 'input_%04d.png' % id), input[j].squeeze(), cmap='gray')
+                plt.imsave(os.path.join(result_dir_test, 'png', 'output_%04d.png' % id), output[j].squeeze(), cmap='gray')
 
-                np.save(os.path.join(result_dir, 'numpy', 'label_%04d.npy' % id), label[j].squeeze())
-                np.save(os.path.join(result_dir, 'numpy', 'input_%04d.npy' % id), input[j].squeeze())
-                np.save(os.path.join(result_dir, 'numpy', 'output_%04d.npy' % id), output[j].squeeze())
+                np.save(os.path.join(result_dir_test, 'numpy', 'label_%04d.npy' % id), label[j].squeeze())
+                np.save(os.path.join(result_dir_test, 'numpy', 'input_%04d.npy' % id), input[j].squeeze())
+                np.save(os.path.join(result_dir_test, 'numpy', 'output_%04d.npy' % id), output[j].squeeze())
 
     print("AVERAGE: BATCH %04d / %04d | LOSS %.4f" %
           (batch, num_batch_test, np.mean(loss_arr)))
