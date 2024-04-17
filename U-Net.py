@@ -199,7 +199,7 @@ else:
             output = fn_tonumpy(fn_class(output))
 
             for j in range(label.shape[0]):
-                id = num_batch_test * (batch - 1) + j
+                id = batch_size * (batch - 1) + j
 
                 plt.imsave(os.path.join(result_dir, 'png', 'label_%04d.png' % id), label[j].squeeze(), cmap='gray')
                 plt.imsave(os.path.join(result_dir, 'png', 'input_%04d.png' % id), input[j].squeeze(), cmap='gray')
